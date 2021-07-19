@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { DetalheComponent } from './detalhe/detalhe';
+import { NgModule } from '@angular/core'; 
+
 @NgModule({
-	declarations: [DetalheComponent],
+	declarations: [],
 	imports: [],
-	exports: [DetalheComponent]
+	exports: []
 })
 export class ComponentsModule {}
