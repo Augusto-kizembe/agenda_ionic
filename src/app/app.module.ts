@@ -1,5 +1,6 @@
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core'; 
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
@@ -15,7 +16,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
   declarations: [
-    MyApp,
+    MyApp, 
     AboutPage,
     ContactPage,
     HomePage,
@@ -24,7 +25,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     RegistrarPage
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
+    HttpClientModule, 
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
