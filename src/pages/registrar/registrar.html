@@ -20,12 +20,12 @@
 
     <ion-item>
       <ion-label floating>Apelido</ion-label>
-      <ion-input type="text" value=""></ion-input>
+      <ion-input type="text" [(ngModel)] ="apelido" value=""></ion-input>
     </ion-item>
     
     <ion-item>
       <ion-label>Genero</ion-label>
-      <ion-select [(ngModel)]="gender">
+      <ion-select [(ngModel)]="genero">
         <ion-option value="f">Feminina</ion-option>
         <ion-option value="m">Masculino</ion-option>
       </ion-select>
@@ -33,19 +33,19 @@
 
     <ion-item>
       <ion-label>Tipo de Relação</ion-label>
-      <ion-select [(ngModel)]="gaming" interface="popover">
-        <ion-option value="nes">Amigo Chegado</ion-option>
-        <ion-option value="n64">Familiar</ion-option>
-        <ion-option value="ps">Colega de Escola</ion-option>
-        <ion-option value="genesis">Colega de Trabalho</ion-option>
-        <ion-option value="saturn">Conhecido</ion-option>
-        <ion-option value="snes">Outro</ion-option>
+      <ion-select [(ngModel)]="tipo" interface="popover">
+        <ion-option value="Amigo Chegado">Amigo Chegado</ion-option>
+        <ion-option value="Familiar">Familiar</ion-option>
+        <ion-option value="Colega de Escola">Colega de Escola</ion-option>
+        <ion-option value="Colega de Trabalho">Colega de Trabalho</ion-option>
+        <ion-option value="Conhecido">Conhecido</ion-option>
+        <ion-option value="Outro">Outro</ion-option>
       </ion-select>
     </ion-item>
      
   </ion-list>
 
   <div padding>
-    <button ion-button color="primary" (click)="guardar(nome)" block>Sign In</button>
+    <button ion-button color="primary" (click)="guardar(nome,tipo,genero,apelido)" block>Sign In</button>
   </div>
 </ion-content>

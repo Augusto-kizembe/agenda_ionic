@@ -8,8 +8,11 @@
   <ion-list>
     <ion-list-header>Todos os Contactos</ion-list-header>
 
+    <div *ngIf="dados.length == 0">
+      <p>Erro de busca de dados pela Api...</p>
+    </div>
     <ion-item-sliding *ngFor="let pessoa of dados">
-      <ion-item (click)="detalhe(pessoa)">
+      <ion-item (click)="detalhe(pessoa.id)">
         <ion-avatar item-start>
           <img src="img/slimer.png">
         </ion-avatar>

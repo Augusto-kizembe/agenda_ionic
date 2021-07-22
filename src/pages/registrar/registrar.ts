@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular'; 
-
+import { HttpClient } from '@angular/common/http';
 /**
  * Generated class for the RegistrarPage page.
  *
@@ -15,11 +15,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RegistrarPage {
 
-  pessoa: { nome: String};
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private url = 'http://localhost:5000/agenda';
+  
+  constructor(public navCtrl: NavController, public http: HttpClient, public navParams: NavParams) {
   }
 
-  guardar(pessoa) {
+  guardar(nome,tipo,genero,apelido) {
+    var pessoa = {
+      nome: nome,tipo: tipo,genero: genero,apelido: apelido
+    }
+ 
     console.log(pessoa);
   }
 

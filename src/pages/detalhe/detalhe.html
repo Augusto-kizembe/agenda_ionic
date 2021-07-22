@@ -17,24 +17,28 @@
 
     <ion-card-content>
       <ion-card-title>
-        Björk
+        {{ pessoa.nome }} ({{ pessoa.apelido }})
       </ion-card-title>
       <p>
-        Björk first came to prominence as one of the lead vocalists of the avant pop Icelandic sextet the Sugarcubes, but when...
+        Relação: {{ pessoa.tipo }}
       </p>
     </ion-card-content>
+ 
+    <div *ngFor="let contacto of contactos">
+      <ion-item *ngIf="contacto.tipo == 'telefone' ">
+          <ion-icon name='call' item-start style="color: #d03e84"></ion-icon>
+            {{ contacto.designacao }}
+          <ion-badge item-end>{{ contacto.operadora }}</ion-badge>
+      </ion-item>
+      
+      <ion-item *ngIf="contacto.tipo == 'email' ">
+        <ion-icon name='logo-google' item-start style="color: #455561"></ion-icon>
+          {{ contacto.designacao }}
+        <ion-badge item-end>E-mail</ion-badge>
 
-    <ion-item>
-      <ion-icon name='musical-notes' item-start style="color: #d03e84"></ion-icon>
-      Albums
-      <ion-badge item-end>9</ion-badge>
-    </ion-item>
-
-    <ion-item>
-      <ion-icon name='logo-twitter' item-start style="color: #55acee"></ion-icon>
-      Followers
-      <ion-badge item-end>260k</ion-badge>
-    </ion-item>
-
+      </ion-item>
+      
+    </div>
+ 
   </ion-card>
 </ion-content>

@@ -21,8 +21,7 @@ export class HomePage {
   }
 
   allpessoas(): void{
-     this.http.get(this.url + '/pessoas').subscribe(res => {
-      console.log(res);
+    this.http.get(this.url + '/pessoas').subscribe(res => {
        this.dados = res; 
     });
     
@@ -33,8 +32,7 @@ export class HomePage {
   }
 
   detalhe(id) {
-    console.log(id);
-   // this.navCtrl.push(DetalhePage);
+    this.navCtrl.push(DetalhePage, {'idpessoa': id, 'url': this.url});
   }
 
 }
