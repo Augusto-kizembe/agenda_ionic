@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular'; 
 import { HttpClient } from '@angular/common/http';
+
+import { CriarContactoPage } from '../criar-contacto/criar-contacto';
 /**
  * Generated class for the RegistrarPage page.
  *
@@ -22,10 +24,16 @@ export class RegistrarPage {
 
   guardar(nome,tipo,genero,apelido) {
     var pessoa = {
-      nome: nome,tipo: tipo,genero: genero,apelido: apelido
+      nome: nome, genero: genero, tipo: tipo, apelido: apelido
     }
- 
-    console.log(pessoa);
+    this.http.post(this.url + '/pessoa/nova', pessoa).subscribe(data => {
+      if(data != null){
+        console.log(data);
+        this.navCtrl.push(CriarContactoPage,{ verf: 'novo', url: this.url });
+      }
+      //var res = JSON.stringify(data);
+    })
+    //console.log(pessoa);
   }
 
   ionViewDidLoad() {
